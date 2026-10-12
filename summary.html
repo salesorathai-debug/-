@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สรุปยอด - สำนักพิมพ์อมตะ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-name">ชื่อระบบโชคเจริญ(พิม)</div>
+        <div class="brand-sub">สำนักพิมพ์อมตะ · ระบบติดตามคำสั่งซื้อหนังสือ</div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">รายการคำสั่งซื้อ</a>
+        <a href="add.html">เพิ่มคำสั่งซื้อ</a>
+        <a href="summary.html" class="active">สรุปยอด</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>สรุปยอด</h1>
+    <p class="page-desc">ยอดขาย ยอดค้างชำระ จำนวนคำสั่งซื้อตามสถานะ และร้านที่สั่งซื้อมากที่สุด</p>
+
+    <div class="stat-grid">
+      <div class="card stat">
+        <div class="stat-label">ยอดขายรวม</div>
+        <div class="stat-value" id="total-sales">-</div>
+        <div class="stat-note" id="total-sales-note"></div>
+      </div>
+      <div class="card stat stat-danger">
+        <div class="stat-label">ยอดค้างชำระรวม</div>
+        <div class="stat-value" id="unpaid-total">-</div>
+        <div class="stat-note" id="unpaid-note"></div>
+      </div>
+    </div>
+
+    <div class="stat-grid stat-grid-3">
+      <div class="card stat">
+        <div class="stat-label"><span class="badge badge-pending">รอส่ง</span></div>
+        <div class="stat-value" id="count-pending">-</div>
+        <div class="stat-note">รายการ</div>
+      </div>
+      <div class="card stat">
+        <div class="stat-label"><span class="badge badge-shipped">ส่งแล้ว</span></div>
+        <div class="stat-value" id="count-shipped">-</div>
+        <div class="stat-note">รายการ</div>
+      </div>
+      <div class="card stat">
+        <div class="stat-label"><span class="badge badge-paid">ชำระแล้ว</span></div>
+        <div class="stat-value" id="count-paid">-</div>
+        <div class="stat-note">รายการ</div>
+      </div>
+    </div>
+
+    <div class="chart-grid">
+      <section class="card">
+        <h2 class="chart-title">จำนวนคำสั่งซื้อแยกตามสถานะ</h2>
+        <div id="status-chart"></div>
+      </section>
+      <section class="card">
+        <h2 class="chart-title">ร้านที่ยอดสั่งซื้อสูงสุด 5 อันดับ</h2>
+        <div id="shop-chart"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">สำนักพิมพ์อมตะ · ข้อมูลในระบบตอนนี้เป็นข้อมูลสมมติ</footer>
+
+  <script src="data.js"></script>
+  <script src="summary.js"></script>
+</body>
+</html>

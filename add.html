@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เพิ่มคำสั่งซื้อ - สำนักพิมพ์อมตะ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-name">ชื่อระบบโชคเจริญ(พิม)</div>
+        <div class="brand-sub">สำนักพิมพ์อมตะ · ระบบติดตามคำสั่งซื้อหนังสือ</div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">รายการคำสั่งซื้อ</a>
+        <a href="add.html" class="active">เพิ่มคำสั่งซื้อ</a>
+        <a href="summary.html">สรุปยอด</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>เพิ่มคำสั่งซื้อ</h1>
+    <p class="page-desc">บันทึกคำสั่งซื้อใหม่จากร้านค้า</p>
+
+    <form id="order-form" class="card" novalidate>
+      <div id="form-alert" class="alert alert-error" role="alert" hidden></div>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="shop">ร้าน</label>
+          <select id="shop"></select>
+          <div class="field-error"></div>
+        </div>
+        <div class="field">
+          <label for="date">วันที่สั่ง</label>
+          <input id="date" type="date">
+          <div class="field-error"></div>
+          <div id="date-hint" class="page-desc" style="margin: 4px 0 0; font-size: 15px;"></div>
+        </div>
+      </div>
+
+      <h2 class="section-title">หนังสือที่สั่ง</h2>
+      <div id="items"></div>
+
+      <button type="button" id="add-item" class="btn btn-outline" style="margin-top: 16px;">เพิ่มหนังสืออีกเรื่อง</button>
+
+      <div class="grand-total">
+        <span>ยอดรวมทั้งใบ</span>
+        <span id="grand-total">฿0</span>
+      </div>
+
+      <div class="form-actions">
+        <a href="index.html" class="btn btn-outline" style="text-decoration: none; text-align: center;">ยกเลิก</a>
+        <button type="submit" class="btn">บันทึกคำสั่งซื้อ</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">สำนักพิมพ์อมตะ · ข้อมูลในระบบตอนนี้เป็นข้อมูลสมมติ</footer>
+
+  <script src="data.js"></script>
+  <script src="add.js"></script>
+</body>
+</html>

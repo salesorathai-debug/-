@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>รายการคำสั่งซื้อ - สำนักพิมพ์อมตะ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-name">ชื่อระบบโชคเจริญ(พิม)</div>
+        <div class="brand-sub">สำนักพิมพ์อมตะ · ระบบติดตามคำสั่งซื้อหนังสือ</div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="active">รายการคำสั่งซื้อ</a>
+        <a href="add.html">เพิ่มคำสั่งซื้อ</a>
+        <a href="summary.html">สรุปยอด</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>รายการคำสั่งซื้อ</h1>
+    <p class="page-desc">คำสั่งซื้อทั้งหมดจากร้านค้า พร้อมสถานะการจัดส่งและการชำระเงิน <span id="order-count"></span></p>
+
+    <div id="message" class="alert alert-success" role="status" hidden></div>
+
+    <div class="toolbar">
+      <div class="field search-field">
+        <label for="search">ค้นหา</label>
+        <input id="search" type="search" placeholder="พิมพ์ชื่อร้านหรือชื่อหนังสือ" autocomplete="off">
+      </div>
+      <div class="filter-box">
+        <div class="filter-label">กรองตามสถานะ</div>
+        <div class="filter-group" role="group" aria-label="กรองตามสถานะ">
+          <button type="button" data-status="all" class="active" aria-pressed="true">ทั้งหมด</button>
+          <button type="button" data-status="pending" aria-pressed="false">รอส่ง</button>
+          <button type="button" data-status="shipped" aria-pressed="false">ส่งแล้ว</button>
+          <button type="button" data-status="paid" aria-pressed="false">ชำระแล้ว</button>
+        </div>
+      </div>
+    </div>
+    <p id="result-count" class="result-count"></p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>เลขที่</th>
+            <th>ร้าน</th>
+            <th>หนังสือ</th>
+            <th class="num">จำนวน</th>
+            <th class="num">ยอดเงิน</th>
+            <th>วันที่สั่ง</th>
+            <th>สถานะ</th>
+          </tr>
+        </thead>
+        <tbody id="orders-body"></tbody>
+      </table>
+    </div>
+
+    <p class="legend-row">
+      <span class="legend-swatch"></span>
+      แถวสีแดง คือรายการที่ยังไม่ชำระและสั่งมาเกิน 30 วัน
+    </p>
+  </main>
+
+  <footer class="site-footer">สำนักพิมพ์อมตะ · ข้อมูลในระบบตอนนี้เป็นข้อมูลสมมติ</footer>
+
+  <script src="data.js"></script>
+  <script src="orders.js"></script>
+</body>
+</html>

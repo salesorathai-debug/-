@@ -1,0 +1,6 @@
+# ไฟล์ที่ห้ามขึ้น GitHub (กุญแจลับ และไฟล์ตั้งค่าเฉพาะเครื่อง)
+.env
+.env.*
+.vercel
+.claude/
+node_modules/
